@@ -1,0 +1,1270 @@
+{
+	"info": {
+		"_postman_id": "7d2eb0b7-990a-4613-a5c5-958dc2cf355b",
+		"name": "Efluence backend API (New)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12994193"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Hugo Lapraline\",\n    \"email\":\"hugo@gmail.com\",\n    \"age\":\"26\",\n    \"gender\":\"H\",\n    \"phone\": 631636756,\n    \"password\":\"Tibotin09@\",\n    \"address\": {\n        \"street\": \"75 quai des orfevres\",\n        \"city\": \"paris\",\n        \"zip\": \"75000\"\n    },\n    \"type_profile\": {\n        \"type_profile_code\": \"EB\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentification",
+			"item": [
+				{
+					"name": "Authenticate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_email\": \"thibault-eb@gmail.com\",\n    \"password\": \"Tibotin09@\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/auth/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTA1MTEwMSwianRpIjoiM2YzNDQ1MGEtN2MxOC00MThmLWIzNTAtYjE3MWY5YjY0ZWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NiwibmJmIjoxNjk1MDUxMTAxLCJleHAiOjE2OTc3Mjk1MDF9.CC5Cf_ZG9f_-5YiqhmNnaZgyzItfeJgGL4jnvBLHmFk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/auth/get_current_user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"auth",
+								"get_current_user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_firstname\":\"Thibault\",\n    \"user_lastname\": \"Conte EB\",\n    \"user_email\":\"thibault-eb@gmail.com\",\n    \"user_phone\": 631635525,\n    \"password\":\"Tibotin09@\",\n    \"user_adresse\": {\n        \"adresse_street\": \"122 chemin des tullippes\",\n        \"adresse_city\": \"toulouse\",\n        \"adresse_zip\": \"31200\",\n        \"adresse_country\": \"FR\"\n    },\n    \"type_profile\": {\n        \"type_profile_code\": \"EB\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Social Network",
+			"item": [
+				{
+					"name": "Youtube",
+					"item": [
+						{
+							"name": "Rattach Youtube",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTIwMDMzOSwianRpIjoiYWJjN2I2YjgtMTJiOC00ODViLWE0NDEtMjMxMjVkMDc4NDdlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDMsIm5iZiI6MTY4OTIwMDMzOSwiZXhwIjoxNjkxODc4NzM5fQ.FVdh3LbiEjP3NDNNybG8sUUqSDFawe91PWC06H3ptbA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\"access_token\":\"ya29.a0AbVbY6OeqZxqta_WMWOYe-j4Ng9HTD4HLhvKB-EJxsSwNspM2JEi3RrgZW2IIwxmrk6k-k95l3E_Dc8gVfJ7b0qziGuDKxcSpOCHFv3NiqotaL3B5JH-88URAb40o_TA7nx1mHdLyuwARCpmadmtSXSoXx47aCgYKAWQSARISFQFWKvPllAgQRJvsFa9AD-sz2--MwQ0163\",\n\"client_id\":\"69075783777-nr3r47j0mjevbbnkch0hkd0qnr7b6eh0.apps.googleusercontent.com\",\n\"client_secret\":\"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\",\n\"expiration_date\":\"Thu, 13 Jul 2023 10:47:40 GMT\",\n\"refresh_token\":\"1//035Y-KTgZYiy3CgYIARAAGAMSNwF-L9Ir7aEEn34HX1p3AIeJ8gBrmCax_kaVgk19oaz-Mov5acP69KzDBhvqDsAszHtnlAxDLQY\",\n\"youtube_channel_description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit lacus id urna scelerisque, at rhoncus arcu malesuada. Sed efficitur risus quis neque volutpat lobortis.\",\n\"youtube_channel_id\":\"UCr5mgsCDXtqIrG9fQdMzpbw\",\n\"youtube_channel_logo\":\"https://yt3.ggpht.com/ytc/AOPolaR6dcDAiT0bguUzB-zXqnqJ9H4bJi0jb_upM6mGmstHbJ3LRJME2d9aBQDqX-23=s88-c-k-c0x00ffffff-no-rj\",\n\"youtube_channel_name\":\"Thibault Conte\",\n\"youtube_channel_publish_date\":\"Thu, 30 Jul 2015 22:52:02 GMT\",\n\"youtube_channel_subscriber_count\":\"0\",\n\"youtube_channel_tag\":\"@thibaultconte7146\",\n\"youtube_channel_video_count\":\"1\",\n\"youtube_channel_view_count\":\"30\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/youtube/rattach_youtube_data",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"youtube",
+										"rattach_youtube_data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Youtube Efluencer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTIwMDMzOSwianRpIjoiYWJjN2I2YjgtMTJiOC00ODViLWE0NDEtMjMxMjVkMDc4NDdlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDMsIm5iZiI6MTY4OTIwMDMzOSwiZXhwIjoxNjkxODc4NzM5fQ.FVdh3LbiEjP3NDNNybG8sUUqSDFawe91PWC06H3ptbA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/youtube/get_youtube_data",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"youtube",
+										"get_youtube_data"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Synchronize Youtube Efluencer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTIwMDMzOSwianRpIjoiYWJjN2I2YjgtMTJiOC00ODViLWE0NDEtMjMxMjVkMDc4NDdlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDMsIm5iZiI6MTY4OTIwMDMzOSwiZXhwIjoxNjkxODc4NzM5fQ.FVdh3LbiEjP3NDNNybG8sUUqSDFawe91PWC06H3ptbA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/youtube/refresh_channel_statistique",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"youtube",
+										"refresh_channel_statistique"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Retrieve Company By Insee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTA1MTEwMSwianRpIjoiM2YzNDQ1MGEtN2MxOC00MThmLWIzNTAtYjE3MWY5YjY0ZWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NiwibmJmIjoxNjk1MDUxMTAxLCJleHAiOjE2OTc3Mjk1MDF9.CC5Cf_ZG9f_-5YiqhmNnaZgyzItfeJgGL4jnvBLHmFk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_siret\": \"91210489000013\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/company/retrieve_company_by_insee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"company",
+								"retrieve_company_by_insee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rattach Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTA1MTEwMSwianRpIjoiM2YzNDQ1MGEtN2MxOC00MThmLWIzNTAtYjE3MWY5YjY0ZWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NiwibmJmIjoxNjk1MDUxMTAxLCJleHAiOjE2OTc3Mjk1MDF9.CC5Cf_ZG9f_-5YiqhmNnaZgyzItfeJgGL4jnvBLHmFk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category_company\": null,\n    \"company_adresse\": {\n        \"adresse_city\": \"VERNIOLLE\",\n        \"adresse_country\": \"FRANCE\",\n        \"adresse_street\": \"52 AV DES PYRENEES\",\n        \"adresse_zip\": \"09340\"\n    },\n    \"date_created_etablissement\": \"2022-04-01\",\n    \"date_created_unity_legal\": \"2022-04-01\",\n    \"denomination_unity_legal\": \"TC EXPERTISE\",\n    \"siren\": \"912104890\",\n    \"siret\": \"91210489000013\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5500/api/company/rattach_company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"company",
+								"rattach_company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ebusiness Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTY4ODAzOSwianRpIjoiZmEzZGJjOWEtNDhmZS00OTEyLTk3NzItYmNhODgxNzFjMzUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MywibmJmIjoxNjg5Njg4MDM5LCJleHAiOjE2OTIzNjY0Mzl9.04gC3uXnEqUvRhDQfyUkaKbee46qLd58bBOw8iFmNN4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/company/get_ebuisness_company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"company",
+								"get_ebuisness_company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4ODczODUzNywianRpIjoiYzEzZjc4MDktZDg4Yi00N2NhLWJmNDQtZTQ4NWQ0YTQxYTg4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4ODczODUzNywiZXhwIjoxNjkxNDE2OTM3fQ.4sr90bDusdMAfVDdBLHKPNjEkGfPKEFEgBOY3YVRoIk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"company_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/company/delete_ebuisness_company",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"company",
+								"delete_ebuisness_company"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Ebusiness",
+					"item": [
+						{
+							"name": "Create & Rattach Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTA1MTEwMSwianRpIjoiM2YzNDQ1MGEtN2MxOC00MThmLWIzNTAtYjE3MWY5YjY0ZWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NiwibmJmIjoxNjk1MDUxMTAxLCJleHAiOjE2OTc3Mjk1MDF9.CC5Cf_ZG9f_-5YiqhmNnaZgyzItfeJgGL4jnvBLHmFk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5500/api/ebusiness/create_profile_ebusiness",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"api",
+										"ebusiness",
+										"create_profile_ebusiness"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rattach Activity",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTA1MTEwMSwianRpIjoiM2YzNDQ1MGEtN2MxOC00MThmLWIzNTAtYjE3MWY5YjY0ZWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NiwibmJmIjoxNjk1MDUxMTAxLCJleHAiOjE2OTc3Mjk1MDF9.CC5Cf_ZG9f_-5YiqhmNnaZgyzItfeJgGL4jnvBLHmFk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"activity_name\":\"LAs chichas Locas\",\n    \"activity_sector\":\"Sex Shop\",\n    \"activity_type\":\"Point de vente physique\",\n    \"activity_short_description\":\"Vente de jouet sexuel pour de vrai\",\n    \"activity_detailled_description\":\"Vente de jouet sexuel pour de vrai, detailled\",\n    \"activity_logo\":\"https://logo.jpeg\",\n    \"activity_adresse\": {\n        \"adresse_street\":\"63 rue de mondeau\",\n        \"adresse_city\":\"strasbourg\",\n        \"adresse_zip\":\"67200\",\n        \"adresse_country\": \"FR\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/api/ebusiness/rattach_activity_ebusiness",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"api",
+										"ebusiness",
+										"rattach_activity_ebusiness"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTA1MTEwMSwianRpIjoiM2YzNDQ1MGEtN2MxOC00MThmLWIzNTAtYjE3MWY5YjY0ZWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NiwibmJmIjoxNjk1MDUxMTAxLCJleHAiOjE2OTc3Mjk1MDF9.CC5Cf_ZG9f_-5YiqhmNnaZgyzItfeJgGL4jnvBLHmFk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ebusiness_profile_short_description\": \"Je suis un ebusiness incroyablement motivé et souhaite collaborer avec des efluencer réglementaire\",\n    \"ebusiness_profile_age\": 21,\n    \"ebusiness_profile_gender\": \"H\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5500/api/ebusiness/update_profile_ebusiness",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5500",
+									"path": [
+										"api",
+										"ebusiness",
+										"update_profile_ebusiness"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Efluencer Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/ebusiness/get_efluencer_profile/a9a4c6ea-6ec",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"ebusiness",
+										"get_efluencer_profile",
+										"a9a4c6ea-6ec"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Efluencer",
+					"item": [
+						{
+							"name": "Create & Rattach Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4ODczNjI0OSwianRpIjoiMWNlMTU4OGItNDMxNC00MjNmLTlkYTktZDlmYTY1YTE5ZDI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDMsIm5iZiI6MTY4ODczNjI0OSwiZXhwIjoxNjkxNDE0NjQ5fQ.B8YaBn9RDigdXfynNodrMJxSfnCNmzXob9JAcFBoezk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/efluencer/create_profile_efluencer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"efluencer",
+										"create_profile_efluencer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rattach Youtube Account",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4ODcyNzY4MCwianRpIjoiMTVjYTVhZWQtN2NhNC00N2E1LWJkZjMtYzAzZDAzN2Y3OTdkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MzEsIm5iZiI6MTY4ODcyNzY4MCwiZXhwIjoxNjkxNDA2MDgwfQ.Dcg-YSPqJKKOx6ag3Aj18QFySJ2KUTERW06HMRaXWsI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/efluencer/rattach_youtube_account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"efluencer",
+										"rattach_youtube_account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4ODczNjI0OSwianRpIjoiMWNlMTU4OGItNDMxNC00MjNmLTlkYTktZDlmYTY1YTE5ZDI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDMsIm5iZiI6MTY4ODczNjI0OSwiZXhwIjoxNjkxNDE0NjQ5fQ.B8YaBn9RDigdXfynNodrMJxSfnCNmzXob9JAcFBoezk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"short_description\": \"Je suis une influenceuse motivé et souhaite collaborer avec des ebusiness réglementaire\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/efluencer/update_profile_efluencer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"efluencer",
+										"update_profile_efluencer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Ebusiness Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUyNDk2MiwianRpIjoiZGRiMGFlMWUtMDUyMS00NTk1LWIzNTktMDZkMTEzMjEzNDI5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDMsIm5iZiI6MTY4OTUyNDk2MiwiZXhwIjoxNjkyMjAzMzYyfQ.WGFW6hGJoLaI11BOIb6Jg_uzgLLVFCqJZNZZTSzNpDw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/efluencer/get_ebusiness_profile/c6543a6e-d28",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"efluencer",
+										"get_ebusiness_profile",
+										"c6543a6e-d28"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "Get Ebusiness Activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NTA1MTEwMSwianRpIjoiM2YzNDQ1MGEtN2MxOC00MThmLWIzNTAtYjE3MWY5YjY0ZWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NiwibmJmIjoxNjk1MDUxMTAxLCJleHAiOjE2OTc3Mjk1MDF9.CC5Cf_ZG9f_-5YiqhmNnaZgyzItfeJgGL4jnvBLHmFk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5500/api/activity/get_ebusiness_activity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5500",
+							"path": [
+								"api",
+								"activity",
+								"get_ebusiness_activity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rattach Activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTY4ODAzOSwianRpIjoiZmEzZGJjOWEtNDhmZS00OTEyLTk3NzItYmNhODgxNzFjMzUzIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MywibmJmIjoxNjg5Njg4MDM5LCJleHAiOjE2OTIzNjY0Mzl9.04gC3uXnEqUvRhDQfyUkaKbee46qLd58bBOw8iFmNN4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"activity_name\":\"Paris Store\",\n    \"activity_sector\":\"Vente grossiste chinois\",\n    \"activity_type\":\"Vente de produit chinois importer de chine.\",\n    \"activity_short_description\":\"Nous vendons des produits chinois, depuis des revente de grosssite.\",\n    \"activity_detailled_description\":\"Nous vendons des produits chinois, depuis des revente de grosssite. détailled escefdef\",\n    \"activity_logo\":\"logo.png\",\n    \"activity_adresse\": {\n        \"street\":\"150 rue des tulipes\",\n        \"city\":\"toulouse\",\n        \"zip\":\"31100\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/activity/rattach_ebusiness_activity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"activity",
+								"rattach_ebusiness_activity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifify Activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4ODczNTI2NiwianRpIjoiMjJiNGE1YTQtMGVlYi00OTdmLWE5YjAtMDdjNTY0NmJkYmZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4ODczNTI2NiwiZXhwIjoxNjkxNDEzNjY2fQ.Had2zSYZBoR4HRf7TZkCfZCq3YGO0V9cBPvawUMHoWI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"activity_id\": 13,\n    \"activity_sector\": \"Un autre secteur\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/activity/modify_ebusiness_activity/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"activity",
+								"modify_ebusiness_activity",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4ODczNTI2NiwianRpIjoiMjJiNGE1YTQtMGVlYi00OTdmLWE5YjAtMDdjNTY0NmJkYmZmIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4ODczNTI2NiwiZXhwIjoxNjkxNDEzNjY2fQ.Had2zSYZBoR4HRf7TZkCfZCq3YGO0V9cBPvawUMHoWI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/activity/delete_ebusiness_activity/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"activity",
+								"delete_ebusiness_activity",
+								"13"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "Ebusiness",
+					"item": [
+						{
+							"name": "Get Published Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/get_published_offer_investments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"get_published_offer_investments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Recent Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/get_recent_offer_investments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"get_recent_offer_investments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Archived Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/get_archived_offer_investments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"get_archived_offer_investments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"offer_object\": \"Partenariat de placement de produit\",\n    \"offer_short_description\": \"Proposition de placement pour promouvoir des nike air force One.\",\n    \"offer_detailled_description\": \"Nous vous proposons de faire la promotions de notre nouveau produit Nike Air Force One pour donner de la visibilité à notre business\",\n    \"offer_sector_emission\": \"National\",\n    \"offer_efluence_type\": \"Mode & Lifestyle\",\n    \"offer_attachment\": \"brochure_produits.pdf\",\n    \"activity_id\": 12,\n    \"company_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/offers/post_offer_investment",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"post_offer_investment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"offer_object\": \"Un nouvel objet pour mon offre\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/offers/update_offer_investment/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"update_offer_investment",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/delete_offer_investment/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"delete_offer_investment",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Archive Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "offer_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5000/api/offers/archive_offer_investment/5/archive",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"archive_offer_investment",
+										"5",
+										"archive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Count Total Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/get_count_total_offer_investments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"get_count_total_offer_investments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Unarchive Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/unarchive_offer_investment/5/unarchive",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"unarchive_offer_investment",
+										"5",
+										"unarchive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Count Total Views Offers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY4OTUxNTk4MCwianRpIjoiZDAwYjg0NGMtNDcxZi00YjlmLWFiZDQtNWNlZGVkNDllODZkIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6NDEsIm5iZiI6MTY4OTUxNTk4MCwiZXhwIjoxNjkyMTk0MzgwfQ.1yupQG2fyDGRR905Jt9SbMbscTVylGrOXuO48cLKwLY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/count_total_views_on_offer_investments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"count_total_views_on_offer_investments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Efluencer",
+					"item": [
+						{
+							"name": "Get Offer By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/api/offers/get_offer_investment_by_id/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"api",
+										"offers",
+										"get_offer_investment_by_id",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
