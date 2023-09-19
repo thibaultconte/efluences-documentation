@@ -1,0 +1,10 @@
+Point de vente physique
+Point de vente en ligne
+
+Modéle TypeActivity:
+
+- id
+- type_activity_uuid
+- type_activity_name
+- type_activity_code
+- type_activity_logo

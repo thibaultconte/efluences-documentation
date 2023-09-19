@@ -1,0 +1,17 @@
+Placement de produit (l’influenceur parle de votre marque à travers un article, une vidéo, ou une publication.)
+
+Partage code promotionnel (Le partage d’un code promotionnel via un influenceur permet de proposer des réductions sur vos produits. 
+                                C’est un contenu très intéressant pour gagner en engagement et en visibilité. )
+
+Jeux concours (Ce type de partenariat est aussi très apprécié sur les réseaux. Il génère de la visibilité mais surtout un fort taux d’engagement.).
+
+Article sponsorisé (L’article sponsorisé est un partenariat rémunéré dans lequel l’influenceur crée un contenu dédié à votre marque.)
+
+
+modéle TypePartnership:
+
+- id
+- type_partnership_uuid
+- type_partnership_name
+- type_partnership_code
+_ type_partnership_logo

@@ -1,0 +1,12 @@
+Macro-influenceurs
+Micro-influenceurs
+Nano-influenceurs
+Mega-influenceurs
+
+modéle TypeInfluence:
+
+- id
+- type_influence_uuid
+- type_influence_name
+- type_influence_code
+- type_influence_logo

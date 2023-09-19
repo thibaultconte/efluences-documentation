@@ -1,0 +1,16 @@
+Industrie pharmaceutique
+Informatique / Télécoms
+Automobile
+Services aux entreprises
+Textile / Habillement / Chaussure
+Bijouterie / Mode
+Transports / Logistique
+Médical / Chirurgicale
+
+Modèle TypeSectorActivity :
+
+- id
+- sector_activity_uuid
+- sector_activity_name
+- sector_activity_code
+- sector_activity_logo

@@ -1,0 +1,18 @@
+Mode & lifestyle
+Nutrition & sport
+Actualités technologiques
+Actualités journalistique
+Voyage & Vlogging
+Jeux vidéo & E-sport
+Combat & Art Martiaux
+TV & Télé-réalité
+Beauté & Makeup
+Stand-up, Humour & comédie
+
+Modèle TypeSectorInfluence :
+
+- id
+- sector_influence_uuid
+- sector_influence_name
+- sector_influence_code
+- sector_influence_logo
