@@ -1,0 +1,17 @@
+## Insee API (Rattachement société) :
+
+    Clés consomateur : 
+
+    zxSVpozIyLQNa2kfSqayvSLbovoa
+
+    Secret consomateur :
+
+    F5K03nRjeLLSpCSHfCRVHIL4Ttga
+
+    Jeton d'accès :
+
+    eb2979a7-ab8f-3e86-8c55-c266636a9987 (Validité de 1765,84438657)
+
+## Youtube API (Rattachement compte youtube) :
+
+ - L'objet se charge depuis la bibliothéque Flow avec le .json des credentials récupérer sur le docs Youtube data Api.

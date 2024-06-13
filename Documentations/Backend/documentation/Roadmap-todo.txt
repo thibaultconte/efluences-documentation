@@ -1,0 +1,15 @@
+
+Ajouter des champs dans les profil efluencer, ebusiness ainsi que dans le model des Offres, pour pouvoir effectuer du filtrage
+
+
+Coder les fonctions pour la marketplace des offres + gestion des offres coté efluenceur :
+
+ Mise en place du système de Marketplace des Offres et Efluencer :
+
+  - Mise en place du système d'indexation  (Idexation de champs pour éviter a la base de reparcourir toutes la tables pour trouver le résultats).
+  - Mise en place du système d'indexation inverse (Utile pour de la recherche en texte plein (Moteur de recherche par mot-clés)).
+  - Mise en place du système de cache. (Mise en cache, invalidation de cache par événement, invalidation temporel...).
+
+
+
+RAJOUTER TWITTER API (éventuellement.)

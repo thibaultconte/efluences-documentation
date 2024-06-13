@@ -1,0 +1,40 @@
+Système d'offres :
+
+Modéle données :
+
+ - Objet offres  (fait)
+ - Courte description (fait)
+ - Marque / activité associé relation (Many2one) (fait)
+ - Société associé relation (Many2One) (fait)
+ - Description détaillé (fait)
+ - Secteur d'émission (National, régional, Locale) (fait)
+ - Piéces jointe rattaché. (fait)
+ - Influence recherché (fait)
+ - timestamps create, update. (fait)
+ 
+ 
+ 
+okay très bien maintenant passons au controller de l'objet OfferInvestment laisse moi te décrire les action dont je vais avoir besoin :
+
+Par rapport a l'utilisateur authentifié (partie Ebusiness) :
+	- Un Ebusinnes doit puvoir Consulter ses OfferInvestment publiées.
+	- Un Ebusinnes doit puvoir Consulter ses OfferInvestment récemment publiées.
+	- Un Ebusinnes doit puvoir Consulter ses OfferInvestment archivées.
+	- Un Ebusiness doit pouvoir créer une OfferInvestment, lors de la création une OfferInvestment doit être rattaché à une ActivityEbsuiness choisie dans le formualireBody request) (par id) ainsi que la 	société choisie dans le formulaire (Body request) aussi (par id) si pas d'id on laise a null.
+	- Un Ebusinnes doit pouvoir modifier une OfferInvestment.
+	- Un Ebusinnes doit pouvoir supprimer une OfferInvestment.
+	- Un Ebusinnes doit pouvoir archivé une OfferInvestment.
+	- Un Ebusinnes doit pouvoir comptabiliser le nombres totales OfferInvestment qu'il à poster.
+
+
+Controllers des offres (Partie Efluencer) :
+
+	- Un Efluenceur doit pouvoir Consulter les derniére OfferInvestment postées par les Ebusiness.
+	- Un Efluenceur doit pouvoir Consulter les derniére OfferInvestment postées par les Ebusiness autours chez lui par rapport a l'adresse rattaché l'activité qui elle est rattaché a OfferInvestment en fonction de son adresse rattachée dans son ProfileEfluencer.
+	- Un Efluenceur doit pouvoir Consulter toutes OfferInvestment postées par les Ebusiness autours chez lui par rapport a l'adresse rattaché l'activité qui elle est rattaché a OfferInvestment en fonction de son adresse rattachée dans son ProfileEfluencer.
+	- Un Efluenceur doit pouvoir Consulter les derniére OfferInvestment postées par les Ebusiness qui lui seront recommandées en fonction des ses critéres dans sont ProfileEbusiness tel que le contenu_gender, audience_ciblé (Algorithme de recommandation) (suggestion d'offres).
+	- Un Efluenceur doit pouvoir mettre en favorie un OfferInvestment postées par les Ebusiness 
+	- Un Efluenceur doit pouvoir Consulter les derniére OfferInvestment postées par les Ebusiness filtrés par rapport au type_activity de l'activité rattaché à l'offre.
+	- Un Efluenceur doit pouvoir Consulter les derniére OfferInvestment postées par les Ebusiness filtrés par rapport a offer_sector_emission de l'offre.
+	- Un Efluenceur doit pouvoir Consulter les derniére OfferInvestment postées par les Ebusiness filtrés par rapport a activity_sector (Secteur d'activité) de l'activité rattaché à l'offre.
+
